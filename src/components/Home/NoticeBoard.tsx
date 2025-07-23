@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Calendar, ArrowRight } from 'lucide-react'
 
 const notices = [
@@ -42,32 +43,33 @@ export default function NoticeBoard() {
           <Calendar className="mr-2 h-6 w-6 text-blue-600" />
           নোটিশ বোর্ড
         </h2>
-        <button className="flex items-center text-blue-600 hover:text-blue-800 font-medium">
+        <Link 
+          to="/notices"
+          className="flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200"
+        >
           আরো নোটিশ
           <ArrowRight className="ml-1 h-4 w-4" />
-        </button>
+        </Link>
       </div>
 
       <div className="space-y-4">
         {notices.map((notice) => (
-          <div
+          <Link
+            to={`/notices/${notice.id}`}
             key={notice.id}
-            className="border-l-4 border-blue-500 pl-4 py-3 hover:bg-blue-50 transition-colors duration-200 cursor-pointer"
+            className="border-l-4 border-blue-500 pl-4  hover:bg-blue-50 transition-colors duration-200 cursor-pointer"
           >
             <div className="flex items-start justify-between">
               <div className="flex-1">
                 <h3 className="font-semibold text-gray-900 mb-1">
                   {notice.title}
                 </h3>
-                <p className="text-gray-600 text-sm mb-2">
-                  {notice.description}
-                </p>
                 <span className="text-xs text-gray-500">
                   {notice.date}
                 </span>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

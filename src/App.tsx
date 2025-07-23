@@ -8,6 +8,10 @@ import Home from './pages/Home'
 import Dashboard from './pages/Dashboard'
 import Students from './pages/Students'
 import Teachers from './pages/Teachers'
+import AllNotices from './pages/AllNotices'
+import NoticeDetail from './pages/NoticeDetail'
+import AllForms from './pages/AllForms'
+import FormApplication from './pages/FormApplication'
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { user, loading } = useAuth()
@@ -30,8 +34,12 @@ function ProtectedRoute({ children }: { children: React.ReactNode }) {
 function AppRoutes() {
   return (
     <Routes>
-      <Route path="/home" element={<Home />} />
-      <Route path="/" element={
+      <Route path="/" element={<Home />} />
+      <Route path="/notices" element={<AllNotices />} />
+      <Route path="/notices/:id" element={<NoticeDetail />} />
+      <Route path="/forms" element={<AllForms />} />
+      <Route path="/forms/:formId/apply" element={<FormApplication />} />
+      <Route path="/login" element={
         <ProtectedRoute>
           <Layout />
         </ProtectedRoute>

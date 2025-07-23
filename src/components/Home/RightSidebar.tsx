@@ -113,6 +113,30 @@ const achievements = [
 export default function RightSidebar() {
   return (
     <div className="space-y-6">
+      {/* Prime Minister Section */}
+      <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div className="bg-green-600 text-white py-2 px-4">
+          <h3 className="text-lg font-semibold text-center">সভাপতি মহোদয়</h3>
+        </div>
+        <div className="p-4">
+          <div className="text-center">
+            <div className="relative mx-auto w-52 h-56 mb-3">
+              <img
+                src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=300"
+                alt="সভাপতি মহোদয়"
+                className="w-full h-full object-cover object-top position-top rounded-lg shadow-md"
+              />
+            </div>
+            <h4 className="text-sm font-semibold text-gray-900 mb-1">
+              প্রফেসর মহাঃ তৌহিদুল ইসলাম
+            </h4>
+            <p className="text-xs text-gray-600 mb-3">
+              সভাপতি কুমরগঞ্জ দ্বিমুখী উচ্চ বিদ্যালয়
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* Quick Links */}
       <div className="bg-white rounded-lg shadow-lg p-6">
         <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">

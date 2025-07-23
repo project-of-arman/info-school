@@ -96,36 +96,66 @@ export default function DynamicCards() {
         {cardData.map((card) => (
           <div
             key={card.id}
-            className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer group"
+            className="bg-white p-4 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300  group"
           >
-            <div className="relative h-48 overflow-hidden">
-              <img
-                src={card.image}
-                alt={card.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-300"></div>
-              <div className="absolute top-4 right-4">
-                <ExternalLink className="h-5 w-5 text-white" />
-              </div>
-            </div>
-            <div className="p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-200">
+            <div className="flex flex-col">
+             <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-200">
                 {card.title}
               </h3>
               <p className="text-gray-600 text-sm mb-4">
                 {card.description}
               </p>
-              <a
-                href={card.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium text-sm"
-              >
-                ভিজিট করুন
-                <ExternalLink className="ml-1 h-4 w-4" />
-              </a>
             </div>
+            <div className="relative flex h-48 ">
+            
+              <div className=" w-32 h-32 inset-0 rounded-xl bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-300">  <img
+                src={card.image}
+                alt={card.title}
+                className="w-32 h-32 rounded-xl object-cover group-hover:scale-105 transition-transform duration-300"
+              /></div>
+             
+               <div className="pl-4">
+           
+              <div className="flex flex-col gap-2">
+                <ul class="triangle-marker">
+  <li>  <a
+                  href={`${card.url}/notices`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex !list-disc items-center text-green-600 hover:text-green-800 font-medium text-xs  py-1 bg-green-50 rounded-md"
+                >
+                  নোটিশ
+                </a></li>
+                <li>  <a
+                  href={`${card.url}/results`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium text-xs py-1 bg-purple-50 rounded-md"
+                >
+                  ফলাফল
+                </a></li>
+                <li>  <a
+                  href={`${card.url}/downloads`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-orange-600 hover:text-orange-800 font-medium text-xs  py-1 bg-orange-50 rounded-md"
+                >
+                  ডাউনলোড
+                </a></li>
+              <li>    <a
+                  href={`${card.url}/contact`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium text-xs py-1 bg-blue-50 rounded-md"
+                >
+                  যোগাযোগ
+                </a></li>
+</ul>
+              
+              </div>
+            </div>
+            </div>
+           
           </div>
         ))}
       </div>

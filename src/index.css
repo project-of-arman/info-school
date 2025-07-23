@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.triangle-marker {
+  list-style: none;
+  padding-left: 0;
+}
+
+.triangle-marker li {
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.triangle-marker li::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  rotate:-30deg;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 10px solid var(--triangle-color, #22c55e); /* default: green-500 */
+}
 /* Custom animations */
 @keyframes marquee {
   0% {
@@ -15,7 +39,7 @@
 .animate-marquee {
   animation: marquee 30s linear infinite;
 }
-
+ 
 /* Slick carousel custom styles */
 .slick-dots {
   bottom: 20px;
